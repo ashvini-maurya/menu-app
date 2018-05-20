@@ -1,0 +1,20 @@
+.category-name {
+  background-color: yellow;
+}
+
+.price {
+  margin-left: 25px;
+}
+
+.description {
+  font-size: 10px;
+}
+
+.count-and-price {
+  float: right;
+}
+
+.count {
+  margin-left: 10px;
+  margin-right: 10px;
+}

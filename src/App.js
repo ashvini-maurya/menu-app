@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Category from './components/category';
+import Detail from './components/detail';
 
 import axios from 'axios';
 
@@ -49,6 +50,20 @@ class App extends Component {
   }
 
   render() {
+
+
+    // const ChineseCombos = this.state.menus.filter((cate) => cate.category === "Chinese Combos");
+    // console.log(ChineseCombos);
+
+
+    // const newMenuObject = [{}];
+    // for (const key of this.state.menus) {
+    //   newMenuObject["ChineseCombos"] = this.state.menus.filter((cate) => cate.category === "Chinese Combos");
+    // }
+
+    // console.log(newMenuObject);
+
+
     return (
       <div className="App">
         <div className="category">
@@ -63,7 +78,28 @@ class App extends Component {
             })
           }
         </div>
-        <div className="details" style={{ width: "60%" }}>Details</div>
+
+
+        <div className="detail" style={{ width: "60%" }}>
+          {/* {
+            this.state.uniqueCategory.map((x, index) => {
+              return <Detail
+                uniquecategory={x}
+                key={index} />
+            })
+          } */}
+          {
+            this.state.menus.map((m, index) => {
+              return <Detail
+                category={m.category}
+                name={m.name}
+                description={m.description}
+                price={m.price}
+                key={index} />
+            })
+          }
+        </div>
+
         <div className="cart" style={{ width: "30%" }}>Cart</div>
       </div>
     );
