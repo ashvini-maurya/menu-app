@@ -3,6 +3,7 @@ import './App.css';
 
 import Category from './components/category';
 import Detail from './components/detail';
+import Cart from './components/cart';
 
 import axios from 'axios';
 
@@ -100,7 +101,7 @@ class App extends Component {
           }
         </div>
 
-        <div className="cart" style={{ width: "30%" }}>Cart</div>
+        <Cart className="cart" />
       </div>
     );
   }
