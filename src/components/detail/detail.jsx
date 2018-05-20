@@ -16,13 +16,11 @@ const Detail = (props) => {
       <span>{props.name}</span>
       
       <span className="count-and-price">
-        <button>-</button>
-          <span className="count"></span>
-        <button>+</button>
+        <button onClick={props.itemRemoved}>-</button>
+          <span className="count">{props.itemCount}</span>
+        <button onClick={props.itemAdded}>+</button>
         <span className="price">${props.price}</span>
       </span>
-
-      {/* <span><button>-</button><span className="price">${props.price}</span><button>+</button></span> */}
       <p className="description">{props.description}</p>
       <hr/>
     </div>

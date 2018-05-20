@@ -11,7 +11,8 @@ import axios from 'axios';
 class App extends Component {
   state = {
     menus: [],
-    uniqueCategory: []
+    uniqueCategory: [],
+    itemCount: 0
   };
 
   componentDidMount() {
@@ -48,6 +49,19 @@ class App extends Component {
         this.setState(newState2);
       })
       .catch(error => console.log(error));
+  }
+
+  removeItemHandler = () => {
+    console.log("item removed");
+    
+  }
+
+  AddItemHandler = () => {
+    console.log("item added");
+
+    this.setState({
+      itemCount: this.state.itemCount + 1
+    });
   }
 
   render() {
@@ -92,6 +106,8 @@ class App extends Component {
           {
             this.state.menus.map((m, index) => {
               return <Detail
+                itemRemoved={() => this.removeItemHandler(index)}
+                itemAdded={() => this.AddItemHandler(index)}
                 category={m.category}
                 name={m.name}
                 description={m.description}
