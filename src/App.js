@@ -3,44 +3,51 @@ import './App.css';
 
 import Category from './components/category';
 
-
-const menus = [
-  {
-    "availabletime": "11:00-15:30",
-    "category": "Chinese Combos",
-    "description": "",
-    "name": "Egg Chinese Combo",
-    "price": 100,
-    "vegflag": "nonveg"
-  },
-  {
-    "availabletime": "00:00-23:59",
-    "category": "Chinese Starter",
-    "description": "",
-    "name": "Indonesian  Nasi Goreng Tofu",
-    "price": 120,
-    "vegflag": "veg"
-  },
-  {
-    "availabletime": "12:00-16:00",
-    "category": "Salads",
-    "description": "",
-    "name": "Veg Salad",
-    "price": 80,
-    "vegflag": "veg"
-  },
-  {
-    "availabletime": "10:00-20:00",
-    "category": "Oriental",
-    "description": "Chilli Garlic Potatoes",
-    "name": "Veg Starter",
-    "price": 55,
-    "vegflag": "veg"
-  }
-]
+import axios from 'axios';
 
 
 class App extends Component {
+  state = {
+    menus: [],
+    uniqueCategory: []
+  };
+
+  componentDidMount() {
+    axios
+      .get("https://thesmartq.firebaseio.com/menu.json")
+      .then(response => {
+        const newMenus = response.data.map(m => {
+          return {
+            availabletime: m.availabletime,
+            category: m.category,
+            description: m.description,
+            name: m.name,
+            price: m.price,
+            vegflag: m.vegflag
+          };
+        });
+
+        const newState = Object.assign({}, this.state, {
+          menus: newMenus
+        });
+        this.setState(newState);
+
+        const uniqueCategorys = [];
+        this.state.menus.map(cat => {
+          if (uniqueCategorys.indexOf(cat.category) === -1) {
+            uniqueCategorys.push(cat.category)
+          }
+        });
+
+        const newState2 = Object.assign({}, this.state, {
+          uniqueCategory: uniqueCategorys
+        });
+
+        this.setState(newState2);
+      })
+      .catch(error => console.log(error));
+  }
+
   render() {
     return (
       <div className="App">
@@ -49,9 +56,9 @@ class App extends Component {
             All
           </div>
           {
-            menus.map((menu, index) => {
+            this.state.uniqueCategory.map((x, index) => {
               return <Category
-                category={menu.category}
+                category={x}
                 key={index} />
             })
           }
