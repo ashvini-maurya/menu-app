@@ -1,7 +1,7 @@
 import React from 'react';
-import './category.css';
+import './Category.css';
 
-const Category = (props) => {
+const category = (props) => {
   return (
     <div>
       <div className="category">
@@ -15,4 +15,4 @@ const Category = (props) => {
   )
 }
 
-export default Category;
+export default category;

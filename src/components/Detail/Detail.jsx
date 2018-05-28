@@ -1,7 +1,7 @@
 import React from 'react';
-import './detail.css';
+import './Detail.css';
 
-const Detail = (props) => {
+const detail = (props) => {
   // console.log([props])
 
   // const ChineseCombos = this.state.menus.filter((cate) => cate.category === "Chinese Combos");
@@ -27,4 +27,4 @@ const Detail = (props) => {
   )
 }
 
-export default Detail;
+export default detail;

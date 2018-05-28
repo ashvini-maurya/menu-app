@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Category from './components/category';
-import Detail from './components/detail';
-import Cart from './components/cart';
+import Category from './components/Category/Category';
+import Detail from './components/Detail/Detail';
+import Cart from './components/Cart/Cart';
 
 import axios from 'axios';
-
 
 class App extends Component {
   state = {
@@ -17,7 +16,7 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get("https://thesmartq.firebaseio.com/menu.json")
+      .get("https://api.myjson.com/bins/o9p5y")
       .then(response => {
         const newMenus = response.data.map(m => {
           return {
@@ -53,7 +52,6 @@ class App extends Component {
 
   removeItemHandler = () => {
     console.log("item removed");
-    
   }
 
   AddItemHandler = () => {

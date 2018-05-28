@@ -1,7 +1,7 @@
 import React from 'react';
-import './cart.css';
+import './Cart.css';
 
-const Cart = (props) => {
+const cart = (props) => {
   return (
     <div className="cart-section">
       <div className="your-cart">
@@ -17,4 +17,4 @@ const Cart = (props) => {
   )
 }
 
-export default Cart;
+export default cart;
