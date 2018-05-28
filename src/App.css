@@ -32,11 +32,11 @@
   }
 }
 
-.category {
+.Category {
   border: 1px solid #eee;
 }
 
-.category-heading {
+.CategoryHeading {
   background-color: yellow;
   height: 40px;
   text-align: center;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 
 import Category from './components/Category/Category';
 import Detail from './components/Detail/Detail';
@@ -78,9 +78,9 @@ class App extends Component {
 
 
     return (
-      <div className="App">
-        <div className="category">
-          <div className="category-heading">
+      <div className={classes.App}>
+        <div className={classes.Category}>
+          <div className={classes.CategoryHeading}>
             All
           </div>
           {

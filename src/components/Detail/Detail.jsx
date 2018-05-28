@@ -1,5 +1,5 @@
 import React from 'react';
-import './Detail.css';
+import classes from './Detail.css';
 
 const detail = (props) => {
   // console.log([props])
@@ -9,19 +9,19 @@ const detail = (props) => {
 
   return (
     <div>
-      <div className="category-name">
+      <div className={classes.CategoryName}>
         <h4>{props.uniquecategory}</h4>
       </div>
 
       <span>{props.name}</span>
       
-      <span className="count-and-price">
+      <span className={classes.CountAndPrice}>
         <button onClick={props.itemRemoved}>-</button>
-          <span className="count">{props.itemCount}</span>
+          <span className={classes.Count}>{props.itemCount}</span>
         <button onClick={props.itemAdded}>+</button>
-        <span className="price">${props.price}</span>
+        <span className={classes.Price}>${props.price}</span>
       </span>
-      <p className="description">{props.description}</p>
+      <p className={classes.Description}>{props.description}</p>
       <hr/>
     </div>
   )

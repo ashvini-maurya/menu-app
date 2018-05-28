@@ -1,14 +1,14 @@
 import React from 'react';
-import './Cart.css';
+import classes from './Cart.css';
 
 const cart = (props) => {
   return (
-    <div className="cart-section">
-      <div className="your-cart">
+    <div className={classes.Cart}>
+      <div>
         <h4>Your Cart</h4>
       </div>
-      <div className="cart">
-        <ul className="item">
+      <div>
+        <ul>
           <li>cart #1</li>
           <li>cart #2</li>
         </ul>
