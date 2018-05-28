@@ -1,6 +1,8 @@
 import React from 'react';
 import classes from './Detail.css';
 
+import Aux from '../../hoc/Aux/Aux';
+
 const detail = (props) => {
   // console.log([props])
 
@@ -8,7 +10,7 @@ const detail = (props) => {
   // console.log(ChineseCombos);
 
   return (
-    <div>
+    <Aux>
       <div className={classes.CategoryName}>
         <h4>{props.uniquecategory}</h4>
       </div>
@@ -23,7 +25,7 @@ const detail = (props) => {
       </span>
       <p className={classes.Description}>{props.description}</p>
       <hr/>
-    </div>
+    </Aux>
   )
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.css';
 
+import Aux from './hoc/Aux/Aux';
 import Category from './components/Category/Category';
 import Detail from './components/Detail/Detail';
 import Cart from './components/Cart/Cart';
@@ -79,7 +80,7 @@ class App extends Component {
 
 
     return (
-      <div>
+      <Aux>
       <Header />
       <div className={classes.App}>
         <div className={classes.Category}>
@@ -120,7 +121,7 @@ class App extends Component {
 
         <Cart className="cart" />
       </div>
-      </div>
+      </Aux>
     );
   }
 }
