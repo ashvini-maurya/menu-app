@@ -4,6 +4,7 @@ import classes from './App.css';
 import Category from './components/Category/Category';
 import Detail from './components/Detail/Detail';
 import Cart from './components/Cart/Cart';
+import Header from './components/Header/Header';
 
 import axios from 'axios';
 
@@ -78,6 +79,8 @@ class App extends Component {
 
 
     return (
+      <div>
+      <Header />
       <div className={classes.App}>
         <div className={classes.Category}>
           <div className={classes.CategoryHeading}>
@@ -116,6 +119,7 @@ class App extends Component {
         </div>
 
         <Cart className="cart" />
+      </div>
       </div>
     );
   }
