@@ -1,31 +1,21 @@
 import React from 'react';
 import classes from './Detail.css';
 
-import Aux from '../../hoc/Aux/Aux';
-
 const detail = (props) => {
-  // console.log([props])
-
-  // const ChineseCombos = this.state.menus.filter((cate) => cate.category === "Chinese Combos");
-  // console.log(ChineseCombos);
+  console.log(props)
 
   return (
-    <Aux>
-      <div className={classes.CategoryName}>
-        <h4>{props.uniquecategory}</h4>
+    <div className={classes.MenuItem}>
+      <div className={classes.MenuItemContainer}>
+        <div>
+          <img src={props.image} alt={props.name} className={classes.MenuImage} />
+        </div>
+        <span>
+          <h6 style={{ "float": "left" }}>{props.name}</h6>
+          <h6 style={{ "float": "right" }}>{props.price}</h6>
+        </span>
       </div>
-
-      <span>{props.name}</span>
-      
-      <span className={classes.CountAndPrice}>
-        <button onClick={props.itemRemoved}>-</button>
-          <span className={classes.Count}>{props.itemCount}</span>
-        <button onClick={props.itemAdded}>+</button>
-        <span className={classes.Price}>${props.price}</span>
-      </span>
-      <p className={classes.Description}>{props.description}</p>
-      <hr/>
-    </Aux>
+    </div>
   )
 }
 

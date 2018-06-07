@@ -18,3 +18,19 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.MenuItem {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+}
+
+.MenuItemContainer {
+  padding: 1rem;
+  position: relative;
+}
+
+.MenuImage {
+  width: 170px;
+  height: auto;
+}
