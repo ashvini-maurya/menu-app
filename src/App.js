@@ -18,15 +18,15 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get("https://api.myjson.com/bins/o9p5y")
+      .get("https://api.myjson.com/bins/1h7fk2")
       .then(response => {
         const newMenus = response.data.map(m => {
           return {
-            availabletime: m.availabletime,
-            category: m.category,
-            description: m.description,
             name: m.name,
             price: m.price,
+            image: m.image,
+            category: m.category,
+            description: m.description,
             vegflag: m.vegflag
           };
         });
@@ -52,75 +52,40 @@ class App extends Component {
       .catch(error => console.log(error));
   }
 
-  removeItemHandler = () => {
-    console.log("item removed");
-  }
-
-  AddItemHandler = () => {
-    console.log("item added");
-
-    this.setState({
-      itemCount: this.state.itemCount + 1
-    });
-  }
-
   render() {
-
-
-    // const ChineseCombos = this.state.menus.filter((cate) => cate.category === "Chinese Combos");
-    // console.log(ChineseCombos);
-
-
-    // const newMenuObject = [{}];
-    // for (const key of this.state.menus) {
-    //   newMenuObject["ChineseCombos"] = this.state.menus.filter((cate) => cate.category === "Chinese Combos");
-    // }
-
-    // console.log(newMenuObject);
-
-
     return (
       <Aux>
-      <Header />
-      <div className={classes.App}>
-        <div className={classes.Category}>
-          <div className={classes.CategoryHeading}>
-            All
+        <Header />
+        <div className={classes.App}>
+          <div className={classes.Category}>
+            <div className={classes.CategoryHeading}>
+              All
           </div>
-          {
-            this.state.uniqueCategory.map((x, index) => {
-              return <Category
-                category={x}
-                key={index} />
-            })
-          }
+            {
+              this.state.uniqueCategory.map((x, index) => {
+                return <Category
+                  category={x}
+                  key={index} />
+              })
+            }
+          </div>
+
+          <div className="detail" style={{ width: "60%" }}>
+            {
+              this.state.menus.map((m, index) => {
+                return <Detail
+                  category={m.category}
+                  name={m.name}
+                  image={m.image}
+                  description={m.description}
+                  price={m.price}
+                  key={index} />
+              })
+            }
+          </div>
+
+          <Cart className="cart" />
         </div>
-
-
-        <div className="detail" style={{ width: "60%" }}>
-          {/* {
-            this.state.uniqueCategory.map((x, index) => {
-              return <Detail
-                uniquecategory={x}
-                key={index} />
-            })
-          } */}
-          {
-            this.state.menus.map((m, index) => {
-              return <Detail
-                itemRemoved={() => this.removeItemHandler(index)}
-                itemAdded={() => this.AddItemHandler(index)}
-                category={m.category}
-                name={m.name}
-                description={m.description}
-                price={m.price}
-                key={index} />
-            })
-          }
-        </div>
-
-        <Cart className="cart" />
-      </div>
       </Aux>
     );
   }
