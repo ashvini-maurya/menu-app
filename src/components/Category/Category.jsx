@@ -7,7 +7,7 @@ const category = (props) => {
   return (
     <Aux>
       <ul className={classes.Item}>
-        <li>{props.category}</li>
+        <li><a href="">{props.category}</a></li>
       </ul>
     </Aux>
 
