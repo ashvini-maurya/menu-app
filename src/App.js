@@ -20,6 +20,7 @@ class App extends Component {
     axios
       .get("https://api.myjson.com/bins/1h7fk2")
       .then(response => {
+        console.log("resopnse: ", response);
         const newMenus = response.data.map(m => {
           return {
             name: m.name,
@@ -70,18 +71,8 @@ class App extends Component {
             }
           </div>
 
-          <div className="detail" style={{ width: "60%" }}>
-            {
-              this.state.menus.map((m, index) => {
-                return <Detail
-                  category={m.category}
-                  name={m.name}
-                  image={m.image}
-                  description={m.description}
-                  price={m.price}
-                  key={index} />
-              })
-            }
+          <div style={{ width: "60%" }}>
+          <Detail menus={this.state.menus} />
           </div>
 
           <Cart className="cart" />
