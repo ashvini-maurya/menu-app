@@ -6,6 +6,7 @@ import Category from './components/Category/Category';
 import Detail from './components/Detail/Detail';
 import Cart from './components/Cart/Cart';
 import Header from './components/Header/Header';
+import Login from './components/Login/Login';
 
 import axios from 'axios';
 
@@ -56,6 +57,7 @@ class App extends Component {
   render() {
     return (
       <Aux>
+        <Login />
         <Header />
         <div className={classes.App}>
           <div className={classes.Category}>
