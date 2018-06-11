@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import classes from './Login.css';
+import Aux from '../../hoc/Aux/Aux';
 
 class Login extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className={classes.Login}>
+      <Aux className={classes.Login}>
         <form onSubmit={this.handleSubmit}>
           <input
             name="email"
@@ -41,7 +42,7 @@ class Login extends Component {
           />
           <input type="submit" value="Submit" />
         </form>
-      </div>
+      </Aux>
     )
   }
 }

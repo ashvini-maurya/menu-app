@@ -7,6 +7,7 @@ import Detail from './components/Detail/Detail';
 import Cart from './components/Cart/Cart';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
+import Modal from './components/UI/Modal/Modal';
 
 import axios from 'axios';
 
@@ -57,7 +58,10 @@ class App extends Component {
   render() {
     return (
       <Aux>
-        <Login />
+        <Modal>
+          <Login />
+        </Modal>
+
         <Header />
         <div className={classes.App}>
           <div className={classes.Category}>
@@ -74,7 +78,7 @@ class App extends Component {
           </div>
 
           <div style={{ width: "60%" }}>
-          <Detail menus={this.state.menus} />
+            <Detail menus={this.state.menus} />
           </div>
 
           <Cart className="cart" />
