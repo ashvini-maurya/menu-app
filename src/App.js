@@ -15,7 +15,8 @@ class App extends Component {
   state = {
     menus: [],
     uniqueCategory: [],
-    itemCount: 0
+    itemCount: 0,
+    loggedIn: false
   };
 
   componentDidMount() {
@@ -55,14 +56,19 @@ class App extends Component {
       .catch(error => console.log(error));
   }
 
+  loggedInHandler = () => {
+    this.setState({ loggedIn: true });
+  }
+
   render() {
     return (
       <Aux>
-        <Modal>
+        <Header />
+        <button onClick={this.loggedInHandler}>LOGIN</button>
+        <Modal show={this.state.loggedIn}>
           <Login />
         </Modal>
 
-        <Header />
         <div className={classes.App}>
           <div className={classes.Category}>
             <div className={classes.CategoryHeading}>
