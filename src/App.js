@@ -90,7 +90,9 @@ class App extends Component {
           </div>
 
           <div style={{ width: "60%" }}>
-            <Detail menus={this.state.menus} />
+            <div className={classes.DetailContainer}>
+              <Detail menus={this.state.menus} />
+            </div>
           </div>
 
           <Cart className="cart" />
