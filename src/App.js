@@ -60,12 +60,16 @@ class App extends Component {
     this.setState({ loggedIn: true });
   }
 
+  loginCancelHandler = () => {
+    this.setState({ loggedIn: false });
+  } 
+
   render() {
     return (
       <Aux>
         <Header />
         <button onClick={this.loggedInHandler}>LOGIN</button>
-        <Modal show={this.state.loggedIn}>
+        <Modal show={this.state.loggedIn} modalClosed={this.loginCancelHandler}>
           <Login />
         </Modal>
 
