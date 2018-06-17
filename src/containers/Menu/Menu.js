@@ -100,8 +100,6 @@ class Menu extends Component {
       </Aux>
     );
   }
-
-
 }
 
 export default Menu;
