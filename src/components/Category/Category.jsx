@@ -7,10 +7,9 @@ const category = (props) => {
   return (
     <Aux>
       <ul className={classes.Item}>
-        <li><a href="">{props.category}</a></li>
+        <li><a href="" onClick={props.selectedCategory}>{props.category}</a></li>
       </ul>
     </Aux>
-
   )
 }
 

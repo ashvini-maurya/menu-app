@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classes from './Detail.css';
-
+import _ from 'lodash';
 
 class Detail extends Component {
   render() {
@@ -19,13 +19,18 @@ class Detail extends Component {
         return categories
       }, {})
 
-    // console.log(categorizedData);
+    let selectedCategory = {};
+    if (this.props.selectedCategory !== 'ALL') {
+      selectedCategory[this.props.selectedCategory] = categorizedData[this.props.selectedCategory]
+    } else {
+      selectedCategory = categorizedData;
+    }
 
-    return (Object.keys(categorizedData).map((key, index) => (
+    return (Object.keys(selectedCategory).map((key, index) => (
       <div key={index}>
         <h2 className={classes.ItemCategory} >{key.toUpperCase()}</h2>
         <div className={classes.Items}>
-          {categorizedData[key].map((key2, index) => (
+          {selectedCategory[key].map((key2, index) => (
             <div key={index} className={classes.MenuItem}>
               <div className={classes.MenuItemContainer}>
                 <img src={key2.image} alt={key2.name} className={classes.MenuImage} />
@@ -39,7 +44,7 @@ class Detail extends Component {
         </div>
       </div>
     )
-    ));
+    ))
   }
 }
 
