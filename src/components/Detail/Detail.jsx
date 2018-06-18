@@ -6,7 +6,6 @@ class Detail extends Component {
   render() {
     const menuData = [...this.props.menus];
     const categorizedData = menuData
-      .map(menu => menu)
       .reduce((categories, menu) => {
         categories[menu.category] = categories[menu.category] || []
         categories[menu.category].push({
