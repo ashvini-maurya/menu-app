@@ -1,0 +1,27 @@
+.LandingPage {
+  text-align: center;
+  font: 400px;
+}
+
+.LandingPage ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.LandingPage li {
+  display: inline-block;
+  margin: 20px;
+}
+
+.LandingPage a {
+  text-decoration: none;
+  color: black;
+}
+
+.LandingPage a:hover,
+.LandingPage a:active {
+  color: #fa923f;
+}
