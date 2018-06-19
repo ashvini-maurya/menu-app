@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+
 import classes from './Menu.css';
-
 import Aux from '../../hoc/Aux/Aux';
-
 import Header from '../../components/Header/Header';
 import Modal from '../../components/UI/Modal/Modal';
 import Cart from '../../components/Cart/Cart';

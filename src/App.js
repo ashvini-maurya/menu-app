@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import Menu from './containers/Menu/Menu';
+import { BrowserRouter } from 'react-router-dom'
 
+import Index from './components/Index/Index';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <Menu />
-      </div>
+      <BrowserRouter>
+        <div>
+          <Index />
+        </div>
+      </BrowserRouter>
     );
   }
 }
