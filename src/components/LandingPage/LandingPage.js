@@ -1,6 +1,8 @@
 import React from 'react';
 import classes from './LandingPage.css';
 
+import KitchenVideo from '../../assets/video/Kitchen.mp4'
+
 const landingPage = () => {
   return (
     <div className={classes.LandingPage}>
@@ -12,10 +14,11 @@ const landingPage = () => {
           </ul>
         </nav>
       </header>
-    <h1 className={classes.LandingPage}>THIS IS LANDING PAGE</h1>
+      <video autoPlay muted loop>
+        <source src={KitchenVideo} type="video/mp4" />
+      </video>
     </div>
   )
 }
-
 
 export default landingPage;
