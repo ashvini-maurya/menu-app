@@ -16,7 +16,8 @@ class Menu extends Component {
     menus: [],
     uniqueCategory: [],
     itemCount: 0,
-    loggedIn: false
+    loggedIn: false,
+    initialselectedCategory: 'ALL'
   };
 
   componentDidMount() {
@@ -64,6 +65,14 @@ class Menu extends Component {
     this.setState({ loggedIn: false });
   }
 
+  selectCategoryHandler = (event) => {
+    event.preventDefault();
+    // console.log("Inside Menu", event.target.innerText)
+    this.setState({
+      initialselectedCategory: event.target.innerText
+    })
+  }
+
   render() {
     return (
       <Aux>
@@ -84,14 +93,16 @@ class Menu extends Component {
               this.state.uniqueCategory.map((x, index) => {
                 return <Category
                   category={x}
-                  key={index} />
+                  key={index} 
+                  selectedCategory={this.selectCategoryHandler}
+                />
               })
             }
           </div>
 
           <div style={{ width: "60%" }}>
             <div className={classes.DetailContainer}>
-              <Detail menus={this.state.menus} />
+              <Detail menus={this.state.menus} selectedCategory={this.state.initialselectedCategory} />
             </div>
           </div>
 
