@@ -1,7 +1,24 @@
 .Cart {
   width: 30%;
+}
+
+.CartHeading {
   background-color: yellow;
   height: 40px;
   text-align: center;
   padding-top: 15px;
+}
+
+.CartItems {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ItemCount {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #666;
+  text-align: center;
+  display: inline-table;
 }

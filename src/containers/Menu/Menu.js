@@ -5,7 +5,8 @@ import classes from './Menu.css';
 import Aux from '../../hoc/Aux/Aux';
 import Header from '../../components/Header/Header';
 import Modal from '../../components/UI/Modal/Modal';
-import Cart from '../../components/Cart/Cart';
+// import Cart from '../../components/Cart/Cart';
+import CartItems from '../../containers/CartItems/CartItems';
 import Category from '../../components/Category/Category';
 import Detail from '../../components/Detail/Detail';
 import Login from '../../components/Login/Login';
@@ -105,7 +106,8 @@ class Menu extends Component {
             </div>
           </div>
 
-          <Cart className="cart" />
+          {/* <Cart className="cart" /> */}
+          <CartItems />
         </div>
       </Aux>
     );
