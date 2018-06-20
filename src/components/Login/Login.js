@@ -16,12 +16,16 @@ class Login extends Component {
   }
 
   handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({ 
+      [event.target.name]: event.target.value
+    });
+    localStorage.setItem(event.target.name, event.target.value);
   }
 
   handleSubmit(event) {
-    alert('Email and password was submitted: ' + this.state.email + ' ' + this.state.password);
     event.preventDefault();
+    console.log("Entered Email: ", this.state.email);
+    console.log("Entered Password: ", this.state.password);
   }
 
   render() {
