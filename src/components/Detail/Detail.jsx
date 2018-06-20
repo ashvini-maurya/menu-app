@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import classes from './Detail.css';
-import _ from 'lodash';
 
 class Detail extends Component {
   render() {
