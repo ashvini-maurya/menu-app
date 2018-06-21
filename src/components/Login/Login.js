@@ -27,17 +27,17 @@ class Login extends Component {
   render() {
     return (
       <Aux className={classes.Login}>
-        <form onSubmit={this.handleSubmit}>
+        <form className={classes.LoginForm} onSubmit={this.handleSubmit}>
           <input
             name="email"
             type="email"
-            placeholder="Please enter email"
+            placeholder="Enter email"
             onChange={this.handleChange}
           />
           <input
             name="password"
             type="password"
-            placeholder="Please enter password"            
+            placeholder="Enter password"            
             onChange={this.handleChange}
           />
           <input type="submit" value="Submit" />

@@ -14,6 +14,10 @@ const modal = (props) => (
         transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
         opacity: props.show ? '1' : '0'
       }}>
+      <div className={classes.ModalHeader}>
+        <h6>Header</h6>
+        <h6 onClick={props.modalClosed}>X</h6>
+      </div>
       {props.children}
     </div>
   </Aux>
