@@ -5,8 +5,7 @@ import classes from './Menu.css';
 import Aux from '../../hoc/Aux/Aux';
 import Header from '../../components/Header/Header';
 import Modal from '../../components/UI/Modal/Modal';
-// import Cart from '../../components/Cart/Cart';
-import CartItems from '../../containers/CartItems/CartItems';
+import Cart from '../../components/Cart/Cart';
 import Category from '../../components/Category/Category';
 import Detail from '../../components/Detail/Detail';
 import Login from '../../components/Login/Login';
@@ -17,7 +16,8 @@ class Menu extends Component {
     uniqueCategory: [],
     itemCount: 0,
     loggedIn: false,
-    initialselectedCategory: 'ALL'
+    initialselectedCategory: 'ALL',
+    selectedOrderItem: []
   };
 
   componentDidMount() {
@@ -67,10 +67,18 @@ class Menu extends Component {
 
   selectCategoryHandler = (event) => {
     event.preventDefault();
-    // console.log("Inside Menu", event.target.innerText)
     this.setState({
       initialselectedCategory: event.target.innerText
     })
+  }
+
+  selectOrderItemHandler = (item) => {
+    const newItem = item.target.alt
+    this.setState(previousItems => ({
+      selectedOrderItem: [...previousItems.selectedOrderItem, newItem]
+    })
+      // selectedOrderItem: item.target.alt
+    )
   }
 
   render() {
@@ -102,12 +110,11 @@ class Menu extends Component {
 
           <div style={{ width: "60%" }}>
             <div className={classes.DetailContainer}>
-              <Detail menus={this.state.menus} selectedCategory={this.state.initialselectedCategory} />
+              <Detail menus={this.state.menus} selectedCategory={this.state.initialselectedCategory} selectOrderItem={this.selectOrderItemHandler} />
             </div>
           </div>
 
-          {/* <Cart className="cart" /> */}
-          <CartItems />
+          <Cart className="cart" selectedOrderItem={this.state.selectedOrderItem} />
         </div>
       </Aux>
     );

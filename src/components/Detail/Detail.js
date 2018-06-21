@@ -29,7 +29,7 @@ class Detail extends Component {
         <h2 className={classes.ItemCategory} >{key.toUpperCase()}</h2>
         <div className={classes.Items}>
           {selectedCategory[key].map((key2, index) => (
-            <div key={index} className={classes.MenuItem}>
+            <div key={index} className={classes.MenuItem} onClick={this.props.selectOrderItem}>
               <div className={classes.MenuItemContainer}>
                 <img src={key2.image} alt={key2.name} className={classes.MenuImage} />
               </div>
