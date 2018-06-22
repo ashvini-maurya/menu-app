@@ -4,7 +4,7 @@ import axios from 'axios';
 import classes from './Menu.css';
 import Aux from '../../hoc/Aux/Aux';
 import Header from '../../components/Header/Header';
-import Modal from '../../components/UI/Modal/Modal';
+// import Modal from '../../components/UI/Modal/Modal';
 import Cart from '../../components/Cart/Cart';
 import Category from '../../components/Category/Category';
 import Detail from '../../components/Detail/Detail';
@@ -79,9 +79,7 @@ class Menu extends Component {
           <Header />
           <button onClick={this.loggedInHandler}>LOGIN</button>
         </div>
-        <Modal show={this.state.loggedIn} modalClosed={this.loginCancelHandler}>
-          <Login />
-        </Modal>
+        <Login show={this.state.loggedIn} modalClosed={this.loginCancelHandler} />
 
         <div className={classes.Menu}>
           <div className={classes.Category}>

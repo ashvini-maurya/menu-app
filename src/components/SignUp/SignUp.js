@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
-import classes from './Login.css';
-import Modal from '../UI/Modal/Modal';
+import classes from './SignUp.css';
+import Aux from '../../hoc/Aux/Aux';
 
-class Login extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      confirmPassword: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -26,8 +27,8 @@ class Login extends Component {
 
   render() {
     return (
-      <Modal show={this.props.show} clicked={this.props.modalClosed}>
-        <form className={classes.LoginForm} onSubmit={this.handleSubmit}>
+      <Aux>
+        <form className={classes.SignUpForm} onSubmit={this.handleSubmit}>
           <input
             name="email"
             type="email"
@@ -37,14 +38,20 @@ class Login extends Component {
           <input
             name="password"
             type="password"
-            placeholder="Enter password"
+            placeholder="Enter password"            
             onChange={this.handleChange}
           />
-          <input type="submit" value="Login" />
+          <input
+            name="confirmPassword"
+            type="password"
+            placeholder="Confirm password"            
+            onChange={this.handleChange}
+          />
+          <input type="submit" value="Sign up" />
         </form>
-      </Modal>
+      </Aux>
     )
   }
 }
 
-export default Login;
+export default SignUp;
