@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import classes from './SignUp.css';
-import Aux from '../../hoc/Aux/Aux';
+import Modal from '../UI/Modal/Modal';
 
 class SignUp extends Component {
   constructor(props) {
@@ -27,7 +27,11 @@ class SignUp extends Component {
 
   render() {
     return (
-      <Aux>
+      <Modal show={this.props.show} clicked={this.props.modalClosed}>
+        <div className={classes.SignUpHeader}>
+          <h4>SignUp</h4>
+          <h4 onClick={this.props.modalClosed}>X</h4>
+        </div>
         <form className={classes.SignUpForm} onSubmit={this.handleSubmit}>
           <input
             name="email"
@@ -38,18 +42,18 @@ class SignUp extends Component {
           <input
             name="password"
             type="password"
-            placeholder="Enter password"            
+            placeholder="Enter password"
             onChange={this.handleChange}
           />
           <input
             name="confirmPassword"
             type="password"
-            placeholder="Confirm password"            
+            placeholder="Confirm password"
             onChange={this.handleChange}
           />
           <input type="submit" value="Sign up" />
         </form>
-      </Aux>
+      </Modal>
     )
   }
 }

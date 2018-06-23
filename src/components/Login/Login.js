@@ -50,6 +50,7 @@ class Login extends Component {
           />
           <input type="submit" value="Login" />
         </form>
+        <h4>Not a Member? Sign-up <button onClick={this.signUpClicked}>Here</button></h4>
       </Modal>
     )
   }
