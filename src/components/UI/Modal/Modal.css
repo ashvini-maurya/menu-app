@@ -18,13 +18,3 @@
     left: calc(50% - 250px);
   }
 }
-
-.ModalHeader {
-  display: flex;
-  justify-content: space-between;
-}
-
-.SignUp {
-  display: flex;
-  justify-content: space-between;
-}

@@ -16,7 +16,7 @@ class Login extends Component {
   }
 
   handleChange(event) {
-    this.setState({ 
+    this.setState({
       [event.target.name]: event.target.value
     });
     localStorage.setItem(event.target.name, event.target.value);
@@ -31,6 +31,10 @@ class Login extends Component {
   render() {
     return (
       <Modal show={this.props.show} clicked={this.props.modalClosed}>
+        <div className={classes.LoginHeader}>
+          <h4>Login</h4>
+          <h4 onClick={this.props.modalClosed}>X</h4>
+        </div>
         <form className={classes.LoginForm} onSubmit={this.handleSubmit}>
           <input
             name="email"
