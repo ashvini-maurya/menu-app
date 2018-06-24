@@ -30,11 +30,7 @@ class Login extends Component {
 
   render() {
     return (
-      <Modal show={this.props.show} clicked={this.props.modalClosed}>
-        <div className={classes.LoginHeader}>
-          <h4>Login</h4>
-          <h4 onClick={this.props.modalClosed}>X</h4>
-        </div>
+      <Modal show={this.props.show} clicked={this.props.modalClosed} title="Login">
         <form className={classes.LoginForm} onSubmit={this.handleSubmit}>
           <input
             name="email"
@@ -50,7 +46,7 @@ class Login extends Component {
           />
           <input type="submit" value="Login" />
         </form>
-        <h4>Not a Member? Sign-up <button onClick={this.signUpClicked}>Here</button></h4>
+        <h4>Not Signed-up yet? Sign-up now <button onClick={this.signUpClicked}>Sign up</button></h4>
       </Modal>
     )
   }

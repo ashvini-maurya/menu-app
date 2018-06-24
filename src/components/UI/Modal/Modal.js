@@ -17,6 +17,10 @@ class Modal extends Component {
             transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
             opacity: this.props.show ? '1' : '0'
           }}>
+          <div className={classes.ModalHeader}>
+            <h4>{this.props.title}</h4>
+            <h4 onClick={this.props.clicked}>X</h4>
+          </div>
           {this.props.children}
         </div>
       </Aux>

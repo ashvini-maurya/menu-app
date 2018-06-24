@@ -4,8 +4,3 @@
   justify-content: center;
   flex-direction: column;
 }
-
-.SignUpHeader {
-  display: flex;
-  justify-content: space-between;
-}

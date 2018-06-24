@@ -27,11 +27,7 @@ class SignUp extends Component {
 
   render() {
     return (
-      <Modal show={this.props.show} clicked={this.props.modalClosed}>
-        <div className={classes.SignUpHeader}>
-          <h4>SignUp</h4>
-          <h4 onClick={this.props.modalClosed}>X</h4>
-        </div>
+      <Modal show={this.props.show} clicked={this.props.modalClosed} title="Sign up">
         <form className={classes.SignUpForm} onSubmit={this.handleSubmit}>
           <input
             name="email"

@@ -4,8 +4,3 @@
   justify-content: center;
   flex-direction: column;
 }
-
-.LoginHeader {
-  display: flex;
-  justify-content: space-between;
-}
