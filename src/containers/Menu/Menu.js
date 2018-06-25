@@ -8,6 +8,7 @@ import Cart from '../../components/Cart/Cart';
 import Category from '../../components/Category/Category';
 import Detail from '../../components/Detail/Detail';
 import Login from '../../components/Login/Login';
+import SignUp from '../../components/SignUp/SignUp';
 
 class Menu extends Component {
   state = {
@@ -15,6 +16,7 @@ class Menu extends Component {
     uniqueCategory: [],
     itemCount: 0,
     loggedIn: false,
+    signedUp: false,
     initialselectedCategory: 'ALL'
   };
 
@@ -59,13 +61,20 @@ class Menu extends Component {
     this.setState({ loggedIn: true });
   }
 
+  signedUpHandler = () => {
+    this.setState({ signedUp: true });
+  }
+
   loginCancelHandler = () => {
     this.setState({ loggedIn: false });
   }
 
+  signUpCancelHandler = () => {
+    this.setState({ signedUp: false });
+  }
+
   selectCategoryHandler = (event) => {
     event.preventDefault();
-    // console.log("Inside Menu", event.target.innerText)
     this.setState({
       initialselectedCategory: event.target.innerText
     })
@@ -77,8 +86,10 @@ class Menu extends Component {
         <div className={classes.HeaderBar}>
           <Header />
           <button onClick={this.loggedInHandler}>LOGIN</button>
+          <button onClick={this.signedUpHandler}>SIGN UP</button>
         </div>
         <Login show={this.state.loggedIn} modalClosed={this.loginCancelHandler} />
+        <SignUp show={this.state.signedUp} modalClosed={this.signUpCancelHandler} />
 
         <div className={classes.Menu}>
           <div className={classes.Category}>
