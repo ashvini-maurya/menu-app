@@ -27,8 +27,51 @@
 }
 
 .LandingPage video {
-  position: fixed;
   right: 0;
   min-width: 100%; 
   min-height: 100%;
+}
+
+.CardContainer {
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+}
+
+.Card .Button {
+  align-self: end;
+}
+
+.TrendingItems {
+  background-color: #e3fdfd;
+  padding: 50px 0 50px 0;
+}
+
+.Card {
+  background-color: white;
+  border-radius: 8px 8px 0 0;
+}
+
+.TrendingItem {
+  border-radius: 8px 8px 0 0;
+}
+
+.CardDescription {
+  padding: .5rem;
+  line-height: 1.6em;
+}
+
+.Button {
+  display: block;
+  background-color: tomato;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  transition: .3s ease-out;
+}
+
+img {
+  max-width: 100%;
 }

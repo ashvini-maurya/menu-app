@@ -17,6 +17,54 @@ const landingPage = () => {
       <video autoPlay muted loop>
         <source src={KitchenVideo} type="video/mp4" />
       </video>
+
+      <div>
+        <h4>Our Trending Items</h4>
+
+        <div className={classes.TrendingItems}>
+          <div className={classes.CardContainer}>
+            <div className={classes.Card}>
+              <img src="http://placekitten.com/500/287" className={classes.TrendingItem} />
+              <main className={classes.CardDescription}>
+                Lorem Ipsum dolor amet sun Lorem Ipsum dolor amet sun Lorem Ipsum dolor amet sun
+              </main>
+              <a href="" className={classes.Button}>Buy</a>
+            </div>
+
+            <div className={classes.Card}>
+              <img src="http://placekitten.com/500/287" className={classes.TrendingItem} />
+              <main className={classes.CardDescription}>
+                Lorem Ipsum dolor amet sun Lorem Ipsum dolor amet sun Lorem Ipsum dolor amet sun
+              </main>
+              <a href="" className={classes.Button}>Buy</a>
+            </div>
+
+            <div className={classes.Card}>
+              <img src="http://placekitten.com/500/287" className={classes.TrendingItem} />
+              <main className={classes.CardDescription}>
+                Lorem Ipsum dolor amet sun Lorem Ipsum dolor amet sun Lorem Ipsum dolor amet sun
+              </main>
+              <a href="" className={classes.Button}>Buy</a>
+            </div>
+
+            <div className={classes.Card}>
+              <img src="http://placekitten.com/500/287" className={classes.TrendingItem} />
+              <main className={classes.CardDescription}>
+                Lorem Ipsum dolor amet sun Lorem Ipsum dolor amet sun Lorem Ipsum dolor amet sun
+              </main>
+              <a href="" className={classes.Button}>Buy</a>
+            </div>
+
+            <div className={classes.Card}>
+              <img src="http://placekitten.com/500/287" className={classes.TrendingItem} />
+              <main className={classes.CardDescription}>
+                Lorem Ipsum dolor amet sun Lorem Ipsum dolor amet sun Lorem Ipsum dolor amet sun
+              </main>
+              <a href="" className={classes.Button}>Buy</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
